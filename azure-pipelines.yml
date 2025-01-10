@@ -1,25 +1,27 @@
 pool:
-  name: 'Pool-01'
-  vmImage: 'windows-latest'  # You can specify the image for Windows if needed (e.g., windows-latest)
+  name: 'LinuxVMSS-01'
+  vmImage: 'ubuntu-latest'  # Use 'ubuntu-latest' for Linux machines
 
 jobs:
 - job: Job1
   displayName: 'First Job'
   steps:
-  - powershell: |
-      Write-Output "Hello from Job1"
-    displayName: 'Run PowerShell script for Job1'
+  - bash: |
+      echo "Hello from Job1"
+      sleep 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run Bash script for Job1'
 
-- job: Job2
-  displayName: 'Second Job'
-  steps:
-  - powershell: |
-      Write-Output "Hello from Job2"
-    displayName: 'Run PowerShell script for Job2'
+  - bash: |
+      echo "Checking Java installation..."
+      java -version || echo "Java is not installed"
+    displayName: 'Check Java Installation'
 
-- job: Job3
-  displayName: 'Third Job'
-  steps:
-  - powershell: |
-      Write-Output "Hello from Job3"
-    displayName: 'Run PowerShell script for Job3'
+  - bash: |
+      echo "Checking Maven installation..."
+      mvn -v || echo "Maven is not installed"
+    displayName: 'Check Maven Installation'
+
+  - bash: |
+      echo "Checking Chrome installation..."
+      google-chrome --version || echo "Chrome is not installed"
+    displayName: 'Check Chrome Installation'
