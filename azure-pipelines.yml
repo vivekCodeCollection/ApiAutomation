@@ -1,6 +1,7 @@
 pool:
   name: 'Pool-01'
-  vmImage: 'windows-latest'  # You can specify the image for Windows if needed (e.g., windows-latest)
+  demands:
+    - agent.name -equals 'rg-testru000004'  # You can specify the image for Windows if needed (e.g., windows-latest)
 
 jobs:
 - job: Job1
