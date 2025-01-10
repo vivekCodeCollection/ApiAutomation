@@ -8,7 +8,6 @@ jobs:
   steps:
   - powershell: |
       Write-Output "Hello from Job1"
-      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
     displayName: 'Run PowerShell script for Job1'
 
 - job: Job2
@@ -16,7 +15,6 @@ jobs:
   steps:
   - powershell: |
       Write-Output "Hello from Job2"
-      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
     displayName: 'Run PowerShell script for Job2'
 
 - job: Job3
@@ -24,21 +22,4 @@ jobs:
   steps:
   - powershell: |
       Write-Output "Hello from Job3"
-      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
     displayName: 'Run PowerShell script for Job3'
-
-- job: Job4
-  displayName: 'Fourth Job'
-  steps:
-  - powershell: |
-      Write-Output "Hello from Job4"
-      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
-    displayName: 'Run PowerShell script for Job4'
-
-- job: Job5
-  displayName: 'Fifth Job'
-  steps:
-  - powershell: |
-      Write-Output "Hello from Job5"
-      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
-    displayName: 'Run PowerShell script for Job5'
