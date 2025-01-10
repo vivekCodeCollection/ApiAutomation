@@ -1,19 +1,44 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
 pool:
-  vmImage: ubuntu-latest
+  name: 'Pool-01'
+  vmImage: 'windows-latest'  # You can specify the image for Windows if needed (e.g., windows-latest)
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+jobs:
+- job: Job1
+  displayName: 'First Job'
+  steps:
+  - powershell: |
+      Write-Output "Hello from Job1"
+      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run PowerShell script for Job1'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- job: Job2
+  displayName: 'Second Job'
+  steps:
+  - powershell: |
+      Write-Output "Hello from Job2"
+      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run PowerShell script for Job2'
+
+- job: Job3
+  displayName: 'Third Job'
+  steps:
+  - powershell: |
+      Write-Output "Hello from Job3"
+      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run PowerShell script for Job3'
+
+- job: Job4
+  displayName: 'Fourth Job'
+  steps:
+  - powershell: |
+      Write-Output "Hello from Job4"
+      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run PowerShell script for Job4'
+
+- job: Job5
+  displayName: 'Fifth Job'
+  steps:
+  - powershell: |
+      Write-Output "Hello from Job5"
+      Start-Sleep -Seconds 300  # Sleep for 5 minutes to ensure job takes 5 minutes
+    displayName: 'Run PowerShell script for Job5'
