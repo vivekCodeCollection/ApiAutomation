@@ -1,5 +1,5 @@
 pool:
-  name: 'LinuxVMSS-01'
+  name: 'AutomationAgentPool'
   vmImage: 'ubuntu-latest'  # Use 'ubuntu-latest' for Linux machines
 
 jobs:
