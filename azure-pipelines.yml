@@ -1,25 +1,128 @@
-pool:
-  name: 'Pool-01'
-  vmImage: 'windows-latest'  # You can specify the image for Windows if needed (e.g., windows-latest)
+##################
+# load-test.yaml #
+##################
+
+trigger: none
+
+pool: AutomationAgentPool
 
 jobs:
-- job: Job1
-  displayName: 'First Job'
+- job: job1
   steps:
-  - powershell: |
-      Write-Output "Hello from Job1"
-    displayName: 'Run PowerShell script for Job1'
+  - task: PowerShell@2
+    displayName: loop1
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
 
-- job: Job2
-  displayName: 'Second Job'
+- job: job2
   steps:
-  - powershell: |
-      Write-Output "Hello from Job2"
-    displayName: 'Run PowerShell script for Job2'
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
 
-- job: Job3
-  displayName: 'Third Job'
+- job: job3
   steps:
-  - powershell: |
-      Write-Output "Hello from Job3"
-    displayName: 'Run PowerShell script for Job3'
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job4
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job5
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job6
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job7
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job8
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job9
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
+
+- job: job10
+  steps:
+  - task: PowerShell@2
+    displayName: loop2
+    inputs:
+      targetType: 'inline'
+      script: |
+        for($i=1;$i -le 15;$i++)
+        {
+            Start-Sleep -Seconds 60
+        }
