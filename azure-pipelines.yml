@@ -1,128 +1,25 @@
-##################
-# load-test.yaml #
-##################
-
-trigger: none
-
-pool: AutomationAgentPool
+pool:
+  name: 'AutomationAgentPool'
+  vmImage: 'ubuntu-latest'  # This is for a Linux-based agent
 
 jobs:
-- job: job1
+- job: Job1
+  displayName: 'First Job'
   steps:
-  - task: PowerShell@2
-    displayName: loop1
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
+  - script: |
+      echo "Hello from Job1"
+    displayName: 'Run Bash script for Job1'
 
-- job: job2
+- job: Job2
+  displayName: 'Second Job'
   steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
+  - script: |
+      echo "Hello from Job2"
+    displayName: 'Run Bash script for Job2'
 
-- job: job3
+- job: Job3
+  displayName: 'Third Job'
   steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job4
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job5
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job6
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job7
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job8
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job9
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
-
-- job: job10
-  steps:
-  - task: PowerShell@2
-    displayName: loop2
-    inputs:
-      targetType: 'inline'
-      script: |
-        for($i=1;$i -le 15;$i++)
-        {
-            Start-Sleep -Seconds 60
-        }
+  - script: |
+      echo "Hello from Job3"
+    displayName: 'Run Bash script for Job3'
